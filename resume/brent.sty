@@ -1,1 +1,328 @@
-/home/brent/Sync/tex_styles/brent.sty
+\ProvidesPackage{brent}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                    %%
+%%  Packages to load                                                  %%
+%%                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{marginnote}
+\usepackage{array}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{sectsty}
+%\usepackage{ulem} % This makes \emph underline.
+\usepackage[usenames]{xcolor}
+\usepackage{tikz}
+  \usetikzlibrary{fit,positioning,calc,snakes,arrows,decorations.text}
+\usepackage[boxruled]{algorithm2e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                    %%
+%%  Formatting improvements, better bracketing and fonts              %%
+%%                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% set up improved big parentheses
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+% make \bar give larger overline instead
+\renewcommand{\bar}[1]{\overline{#1}}
+
+% make \vec give a longer overarrow
+\let\oldvec\vec
+\renewcommand{\vec}{\overrightarrow}
+
+% bracketing macros
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\p}[1]{\left( #1 \right)}
+\newcommand{\s}[1]{\left[ #1 \right]}
+\newcommand{\pints}[1]{\left( #1 \right]}
+\newcommand{\sintp}[1]{\left[ #1 \right)}
+\newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+% custom font macros
+\newcommand{\mc}{\mathcal}
+\newcommand{\mr}{\mathrm}
+\newcommand{\md}{\mathds}
+\newcommand{\mb}{\mathbf}
+\newcommand{\mf}{\mathfrak}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                    %%
+%%  Standard set and other object notation                            %%
+%%                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\N}{\md{N}}         % Natural numbers
+\newcommand{\Q}{\md{Q}}         % Rational numbers
+\newcommand{\R}{\md{R}}         % Real numbers
+\newcommand{\E}{\md{E}}         % Euclidean space
+\newcommand{\Z}{\md{Z}}         % Integers
+\newcommand{\C}{\md{C}}         % Complex numbers
+\newcommand{\F}{\md{F}}         % Fields'n'such
+\newcommand{\Fam}{\mc{F}}       % Family of sets
+\newcommand{\Chn}{\mc{C}}       % Chain
+\newcommand{\FF}{\md{F}}        % Finite Field
+\newcommand{\PP}{\mc{P}}        % Polynomial time
+\newcommand{\NP}{\mc{NP}}       % Non-Deterministic Polynomial time
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                    %%
+%%  custom operators of many sizes and shapes (functions)             %%
+%%                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Ramsey numbers:
+\newcommand{\hram}[3]{\mc{R}^{\p{#1}}_{#2} \! \p{ #3 }}
+\newcommand{\ram}{\operatorname{\mc{R}}}
+
+% Imag. part of number, image of func.
+\newcommand{\im}{\operatorname{Im}}
+
+% Real part of complex number
+\newcommand{\re}{\operatorname{Re}}
+
+% tower function
+\newcommand{\twr}{\operatorname{twr}}
+
+% rank of a matrix
+\newcommand{\rank}{\operatorname{rank}}
+
+% expected value
+\newcommand{\Exp}{\md{E}}
+
+% probability
+\newcommand{\Pro}{\md{P}}
+
+% variance
+\newcommand{\Var}{\operatorname{Var}}
+
+% covariance
+\newcommand{\Cov}{\operatorname{Cov}}
+
+% number of latin squares of order n
+\newcommand{\lat}{\operatorname{LAT}}
+
+% automorphism group
+\newcommand{\Aut}{\operatorname{Aut}}
+
+% event
+\newcommand{\Ev}{\mc{E}}
+
+% random graph
+\newcommand{\RG}{\mc{G}}
+
+% indicator function
+\newcommand{\ind}{\md{1}}
+
+% extremal number
+\newcommand{\ex}{\operatorname{ex}}
+
+% saturation number
+\newcommand{\sat}{\operatorname{sat}}
+
+% weak saturation number
+\newcommand{\wsat}{\operatorname{wsat}}
+
+% diameter
+\newcommand{\diam}{\operatorname{diam}}
+
+% span
+\newcommand{\spn}{\operatorname{span}}
+
+% "Restricted to"
+\newcommand{\rt}[1]{\big|_{#1}}
+
+% tree width
+\newcommand{\tw}{\operatorname{tw}}
+
+% branch width
+\newcommand{\bw}{\operatorname{bw}}
+
+% path width
+\newcommand{\pw}{\operatorname{pw}}
+
+% integration d
+\newcommand{\D}{\,\operatorname{d}}
+
+% matrix permanent
+\newcommand{\per}{\operatorname{Per}}
+
+% codegree
+\newcommand{\codeg}{\operatorname{codeg}}
+
+% order of a separation
+\newcommand{\ord}{\operatorname{ord}}
+
+% order of a separation
+\newcommand{\rel}{\operatorname{rel}}
+
+% value (e.g., of a cut in a graph)
+\newcommand{\val}{\operatorname{val}}
+
+% cech complex notation.
+\newcommand{\cech}{\operatorname{cech}}
+
+% out(C) for Chuzhoy papers
+\newcommand{\out}{\operatorname{out}}
+
+% poly for Chuzhoy papers
+\newcommand{\poly}{\operatorname{poly}}
+
+% poly log for Chuzhoy papers
+\newcommand{\polylog}{\operatorname{poly\,log}}
+
+% distance notation
+\newcommand{\dist}{\operatorname{dist}}
+
+% convex hull of a set
+\newcommand{\conv}{\operatorname{conv}}
+
+% cone of a set
+\newcommand{\cone}{\operatorname{cone}}
+
+% projection
+\newcommand{\proj}{\operatorname{proj}}
+
+% closure (disc geo) of a set
+\newcommand{\cl}{\operatorname{cl}}
+
+% interior of a set
+\newcommand{\inte}{\operatorname{int}}
+
+% affine hull of a set
+\newcommand{\aff}{\operatorname{aff}}
+
+% relative interior
+\newcommand{\relint}{\operatorname{relint}}
+
+% This gives a way to denote defined terms without italics.
+% Make a fancyass definition box (very thin and tight so it doesn't
+% screw up spacing of lines
+\newbox\@basicbox
+\def\dbox{\@dbox}
+\def\@dbox#1{%
+  \begingroup
+    \setbox\@basicbox\hbox{{#1}}%
+    \fboxrule=0pt
+    \fboxsep=0pt
+    \fcolorbox{black}{yellow!20}{\box\@basicbox}%
+  \endgroup
+}
+%%\newbox\@basicbox
+%%\def\dbox{\@dbox}
+%%\def\@dbox#1{%
+%%  \begingroup
+%%    \setbox\@basicbox\hbox{{#1}}%
+%%    \fboxrule=0.1pt
+%%    \fboxsep=1pt
+%%    \fbox{\box\@basicbox}%
+%%  \endgroup
+%%}
+%%
+\newcommand{\demph}{\dbox}
+\newcommand{\innerdnote}[2]{%
+  \marginnote{%
+    #2\normalfont\scriptsize\color{black}{#1}
+  }[-2pt]
+}
+\newcommand{\dnotel}[1]{%
+  \innerdnote{#1}{}
+}
+\newcommand{\dnoter}[1]{%
+  \reversemarginpar\innerdnote{#1}{\flushleft}\normalmarginpar
+}
+\newcommand{\demphl}[1]{\dnotel{#1}\demph{#1}}
+\newcommand{\demphr}[1]{\dnoter{#1}\demph{#1}}
+
+% Arrows
+\newcommand{\ua}{\uparrow}              % Knuth notation
+\newcommand{\inj}{\hookrightarrow}      % injection
+\newcommand{\sur}{\twoheadrightarrow}   % surjection
+
+% Greek (and maybe other) symbol macros
+\newcommand{\eps}{\varepsilon}
+\newcommand{\vp}{\varphi}
+\newcommand{\Om}{\Omega}
+\newcommand{\om}{\omega}
+
+% Graph minor notations
+\newcommand{\minor}{\preccurlyeq}
+\newcommand{\pminor}{\prec}
+\newcommand{\tminor}{\preccurlyeq_{\mr{top}}}
+\newcommand{\ptminor}{\prec_{\mr{top}}}
+
+% Other hyperreferences setup
+\newcommand{\figureref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
+\newcommand{\tableref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
+\newcommand{\equationref}[1]{\hyperref[#1]{Equation~(\ref*{#1})}}
+
+% Fancyass Diestel-style referencing :D:D:D
+
+\makeatletter
+% dref gives a list of dependants (i.e., theorems that depend on the
+% current line somehow).
+
+% This handles the square brackets and newlines
+\newcommand{\inner@dref}[2][\newline]{%
+  \def\nextitem{\def\nextitem{#1}}%
+  \@for \el:=#2\do{%
+  \nextitem\hyperref[\el]{[\ref*{\el}]}}%
+  \newline%
+}
+% This handles the placement in the margin.
+\newcommand{\dref}[1]{%
+  \marginnote{%
+    \flushright\normalfont\scriptsize\inner@dref{#1}%
+  }
+}
+% uref gives a list of dependancies (i.e., theorems that the current
+% line refers to / depends upon somehow).
+
+% This handles the parentheses and newlines
+\newcommand{\inner@uref}[2][\newline]{%
+  \def\nextitem{\def\nextitem{#1}}%
+  \@for \el:=#2\do{%
+  \nextitem\hyperref[\el]{(\ref*{\el})}}%
+  \newline%
+}
+
+% This handles the placement in the margin.
+\newcommand{\uref}[1]{%
+  \marginnote{%
+    \flushright\normalfont\scriptsize\inner@uref{#1}
+  }
+}
+
+% bref gives both (must have two arguments)
+\newcommand{\bref}[2]{%
+  \marginnote{%
+    \flushright\normalfont\scriptsize\inner@dref{#1} \\ \inner@uref{#2}%
+  }
+}
+\makeatother
+
+% Set slightly roomier arrays/tabulars
+\renewcommand{\arraystretch}{1.3}
+
+% So that subsubsections get into Table of contents, and section numbers
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+% Because it bugs me that subsubsections are merely bold by default.
+% This makes them slightly bigger.
+\sectionfont{\LARGE}
+\subsectionfont{\Large}
+\subsubsectionfont{\large}

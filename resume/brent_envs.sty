@@ -1,1 +1,28 @@
-/home/brent/Sync/tex_styles/brent_envs.sty
+\ProvidesPackage{brent_envs}
+
+% Theorem environments, hypertext referencing setup
+\newtheorem{theorem}{Theorem}
+\newcommand{\theoremref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
+\newtheorem{proposition}{Proposition}
+\newcommand{\propositionref}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
+\newtheorem{claim}{Claim}
+\newcommand{\claimref}[1]{\hyperref[#1]{Claim~\ref*{#1}}}
+\newtheorem{lemma}{Lemma}
+\newcommand{\lemmaref}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
+\newtheorem{conjecture}{Conjecture}
+\newcommand{\conjectureref}[1]{\hyperref[#1]{Conjecture~\ref*{#1}}}
+\newtheorem{corollary}{Corollary}
+\newcommand{\corollaryref}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
+\theoremstyle{definition} % The environments below will NOT be italic
+\newtheorem{definition}{Definition}
+\newcommand{\definitionref}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+\newtheorem{observation}{Observation}
+\newcommand{\observationref}[1]{\hyperref[#1]{Observation~\ref*{#1}}}
+\newtheorem{remark}{Remark}
+\newcommand{\remarkref}[1]{\hyperref[#1]{Remark~\ref*{#1}}}
+\newtheorem{question}{Question}
+\newcommand{\questionref}[1]{\hyperref[#1]{Question~\ref*{#1}}}
+\newtheorem{example}{Example}
+\newcommand{\exampleref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
+\newtheorem{exercise}{Exercise}
+\newcommand{\exerciseref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
