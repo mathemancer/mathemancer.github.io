@@ -1,0 +1,154 @@
+\documentclass[a4paper]{article}
+\usepackage{brent_cv}
+\usepackage{pifont}
+\renewcommand{\refname}{Publications \hrulefill}
+\makeatletter
+\newcommand \brentfill {
+  \tiny
+  \leavevmode \cleaders 
+  \hb@xt@ .5em{\hss \textperiodcentered \hss }\hfill \kern \z@
+  \normalsize
+}
+\makeatother
+\pagenumbering{gobble}
+\newcommand{\isp}{:$\ $} 
+\newcommand{\bbull}{\ding{118}}
+
+\begin{document}
+\noindent
+\begin{minipage}[b][1cm]{.7\textwidth}
+  \Huge\textbf{Brent Moran} \\
+  \normalsize\emph{Data Engineering \& Analytics}
+\end{minipage}
+\begin{minipage}[b][1cm]{.4\textwidth}
+  \raggedleft
+  \ttfamily
+  \href{mailto:brentmoran@gmail.com}{brentmoran@gmail.com} \\
+  \href{https://github.com/mathemancer}{github.com/mathemancer}
+\end{minipage}
+
+\subsection*{Relevant Work Experience \hrulefill}
+
+\begin{itemize}
+  \item[\bbull] \textbf{Senior Data Engineer} \emph{Creative Commons},
+    Remote \brentfill{} 2019-now\\
+    Development and maintainence of data pipelines to support CC Search, a media
+    search engine.  Research into impact of organizations using CC licenses.
+    Maintainer of CC Catalog project.  Lead internships related to all of the
+    above.
+  \item[\bbull] \textbf{Full Stack Developer} \emph{Metronom GmbH},
+    Berlin \brentfill{} 2018-19\\
+    Implementation and maintenance of an internal web app for professional
+    users. Development and improvement of pricing algorithms. Implementation of
+    data pipeline in GCP.
+  \item[\bbull] \textbf{Big Data Engineer \& Analyst} \emph{Haensel AMS
+    GmbH}, Berlin \brentfill{} 2017-18\\
+    Data analysis, Python development, and development on the AWS cloud.
+    Set up and test different algorithms.
+\end{itemize}
+
+\subsection*{Education \hrulefill}
+\begin{itemize}
+  \item[\bbull] \textbf{Master of Science} \emph{Freie
+    Universit\"at Berlin} \brentfill{} 2018\\
+    Thesis topic:  Polynomial bounds on grid-minor theorem
+  \item[\bbull] \textbf{Bachelor of Science, Summa Cum Laude} \emph{University
+      of Colorado, Denver} \brentfill{} 2015\\
+    Major:  Mathematics \\
+    Minor: Economics
+  \item[\bbull] \emph{Truman State University}, Kirksville,
+    Missouri \brentfill{} 2003-06\\
+    Studied music composition and analysis
+\end{itemize}
+
+\subsection*{Interesting Projects \hrulefill}
+\begin{itemize}
+  \item[\bbull] \textbf{Linked Commons Graph Analysis} \brentfill{} 2020-now\\
+    Leading an internship to determine impact of CC licenses as well as orgs
+    which use them from the
+    \href{http://dataviz.creativecommons.engineering/}{Linked Commons} graph
+    data set.
+  \item[\bbull] \textbf{CC Catalog}
+    \href{https://github.com/creativecommons/cccatalog}{(Click for Github repo)}
+    \brentfill{} 2019-now\\
+    Maintaining the CC Catalog project to gather and index metadata about
+    hundreds of millions of images from 3rd party APIs as well as Common Crawl.
+    The metadata is then transformed, cleaned, and loaded into a PostgreSQL DB
+    for use in CC Search.
+  \item[\bbull] \textbf{KVI Recommendations on GCP} \brentfill{} 2019\\
+    Extended a data processing job to choose appropriate Key Value Items for
+    special competitor-based pricing strategies.  Migrated processing job from
+    internal cloud solution to GCP.
+  \item[\bbull] \textbf{Dynamic content via AI} \brentfill{} 2018\\
+    Designed, implemented, and deployed to production a serverless, AI-driven API
+    allowing a client website to provide dynamic content to a user based on
+    that user's past behavior.
+  \item[\bbull] \textbf{ETL Pipeline on AWS} \brentfill{} 2017\\
+    Participated in the design and implementation of a serverless ETL
+    (Extract, Transform, and Load) pipeline composed of AWS Lambda
+    functions and Athena Queries (started by Lambda functions in most
+    cases), controlled and sequenced by a finite state machine (AWS Step
+    Function).
+  \item[\bbull] \textbf{Social Dynamics Simulation (2015):}
+    Designed and implemented a simulation of turnover (churn) present in
+    a fictional company, for the purposes of analyzing the effect
+    different hiring/promotion/firing policies have on employee outcomes
+    in a hierarchical corporate setting.
+  \item[\bbull] \textbf{Network influence analysis (2014):}
+    Designed and implemented a web crawling program in order to generate
+    citation networks from data on MathSciNet. Analyzed these networks in order
+    to measure the academic influence of various mathematics papers.
+  \item[\bbull] \textbf{Cellular automata (2014):}
+    Designed and implemented a simulation of world urbanization consisting of a
+    cellular automaton underlying an agent-based simulation.
+\end{itemize}
+
+\subsection*{Technical Skills \hrulefill}
+\begin{itemize}
+  \item[\bbull] \textbf{Programming:}  Python, PySpark, Golang,
+    JavaScript, Java (Spring Boot), Scala (Play)
+  \item[\bbull] \textbf{Querying:} PostgreSQL, MySQL, AWS Athena, Google
+    BigQuery
+  \item[\bbull] \textbf{Cloud Providers:} Amazon Web Services, Google
+    Cloud Platform
+  \item[\bbull] \textbf{Operating Systems:}  Linux, MacOS
+  \item[\bbull] \textbf{Other:}  bash, Git, Apache Airflow, Docker, Kubernetes,
+    Redis, Jenkins, \LaTeX
+\end{itemize}
+
+
+\subsection*{Conference Talks \hrulefill}
+\begin{itemize}
+  \item[\bbull] \textbf{Joint Mathematics Meetings:}
+    San Antonio, Texas \brentfill{} 2015 \\
+    \emph{Ramsey-Minimal Saturation Number for Families of Stars}
+
+  \item[\bbull] \textbf{MAA Mathfest:}
+    Portland, Oregon \brentfill{} 2014 \\
+    \emph{The 1-Relaxed Modular Edge-sum Labeling Game}
+
+  \item[\bbull] \textbf{PPRUMC:}
+    Colorado Springs, Colorado \brentfill{} 2014 \\
+    \emph{Ramsey-Minimal Saturation Number for Families of Stars}
+\end{itemize}
+
+\begingroup
+\renewcommand{\section}[2]{\subsection#1{#2}}%
+\nocite{brandt:local,butler:forest,ferrara:ramseyus}
+\bibliographystyle{plain}
+\bibliography{cvbib.bib}
+\endgroup
+
+\subsection*{Other Research Experience \hrulefill} 
+
+\begin{itemize}
+  \item[\bbull] \textbf{Willamette Valley REU-RET Consortium for
+    Mathematics Research} \\
+    \emph{1-Relaxed Modular Edge-sum Labeling Game Number}
+    Supervised by Charles Dunn and Jennifer Nordstrom of Linfield
+    College, during this REU in competitive graph coloring, we developed
+    a new graph labeling scheme based on modular arithmetic, and proved
+    a number of results regarding our scheme.
+\end{itemize}
+
+\end{document}
