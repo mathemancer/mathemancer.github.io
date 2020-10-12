@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex brent_resume"] 1602424598 "brent_resume.aux" "brent_resume.bbl" "brent_resume" 1602424598
+["bibtex brent_resume"] 1602424598 "brent_resume.aux" "brent_resume.bbl" "brent_resume" 1602491393
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1591545468 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "brent_resume.aux" 1602424598 866 8ce1146b5e400a9da6febf95ac35c8e0 "pdflatex"
-  "cvbib.bib" 1602424595 781 907b483b6b08b72f89c627cc4c99b29b ""
+  "brent_resume.aux" 1602491266 866 8ce1146b5e400a9da6febf95ac35c8e0 "pdflatex"
+  "cvbib.bib" 1602490850 781 907b483b6b08b72f89c627cc4c99b29b ""
   (generated)
-  "brent_resume.bbl"
   "brent_resume.blg"
-["pdflatex"] 1602424598 "brent_resume.tex" "brent_resume.pdf" "brent_resume" 1602424598
+  "brent_resume.bbl"
+["pdflatex"] 1602491265 "brent_resume.tex" "brent_resume.pdf" "brent_resume" 1602491393
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1591545468 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1591545468 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1591545468 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -181,15 +181,15 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1591545468 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1602411875 4727905 1b81189106e2406a827797a37162c1c0 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1602411853 2514043 b43c1ec8094806f567a12bdedaa309d0 ""
-  "brent.sty" 1522043546 9049 00c9c033e2304c89d9f664a0486fb0e5 ""
-  "brent_cv.sty" 1567659117 183 ccae22a881d72a32b99f13e2a60d95cc ""
-  "brent_envs.sty" 1496127424 1308 1eaba55ed691b97e5d3b17c3f9a807fe ""
-  "brent_resume.aux" 1602424598 866 8ce1146b5e400a9da6febf95ac35c8e0 "pdflatex"
-  "brent_resume.bbl" 1602424598 462 9333959215158036944fc59363f7d031 "bibtex brent_resume"
-  "brent_resume.out" 1602424598 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "brent_resume.tex" 1602424034 6384 aa4d679cc10754c02eaf606cb30740ed ""
+  "brent.sty" 1602490850 9049 00c9c033e2304c89d9f664a0486fb0e5 ""
+  "brent_cv.sty" 1602490850 183 ccae22a881d72a32b99f13e2a60d95cc ""
+  "brent_envs.sty" 1602490850 1308 1eaba55ed691b97e5d3b17c3f9a807fe ""
+  "brent_resume.aux" 1602491266 866 8ce1146b5e400a9da6febf95ac35c8e0 "pdflatex"
+  "brent_resume.bbl" 1602490850 462 9333959215158036944fc59363f7d031 "bibtex brent_resume"
+  "brent_resume.out" 1602491266 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "brent_resume.tex" 1602491261 6392 09ba8d0cec3d5e1a803810d0b5129ccd ""
   (generated)
-  "brent_resume.aux"
-  "brent_resume.pdf"
   "brent_resume.out"
+  "brent_resume.pdf"
+  "brent_resume.aux"
   "brent_resume.log"

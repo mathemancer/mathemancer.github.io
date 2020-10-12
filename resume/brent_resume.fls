@@ -1,4 +1,4 @@
-PWD /home/brent/Documents/brent_cv_current/resume
+PWD /home/blm/development/mathemancer.github.io/resume
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT brent_resume.tex
