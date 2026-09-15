@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="prose">
+  {{ .Content }}
+</article>
+{{ $pages := site.RegularPages }}
+{{ if $pages }}
+<section class="recent">
+  <h2>Recent posts</h2>
+  {{ range first 5 $pages }}
+  <div class="post-item">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "Jan 2, 2006" }}</time>
+  </div>
+  {{ end }}
+  <a class="all-posts" href="/blog/">All posts &rarr;</a>
+</section>
+{{ end }}
+{{ end }}

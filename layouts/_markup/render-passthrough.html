@@ -1,0 +1,9 @@
+{{- $opts := dict "displayMode" (eq .Type "block") "output" "htmlAndMathml" -}}
+{{- with try (transform.ToMath .Inner $opts) -}}
+  {{- with .Err -}}
+    {{- errorf "KaTeX could not render equation at %s: %s" $.Position .Err -}}
+  {{- else -}}
+    {{- $.Page.Store.Set "hasMath" true -}}
+    {{- .Value -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="prose intro">
+  {{ .Content }}
+</article>
+<section class="post-list">
+  {{ range .Paginator.Pages }}
+  <article class="post-item">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "Jan 2, 2006" }}</time>
+    {{ with .Summary }}
+    <p>{{ . }}</p>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
+{{ template "_internal/pagination.html" . }}
+{{ end }}
