@@ -110,6 +110,12 @@ a {
   text-decoration: none;
 }
 
+main p,
+main li {
+  text-align: justify;
+  hyphens: auto;
+}
+
 a:hover {
   color: var(--blue-bright);
 }
@@ -191,7 +197,7 @@ time {
   margin-top: 2.5rem;
 }
 
-.post-item {
+.recent .post-item {
   padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -200,7 +206,15 @@ time {
   gap: 1rem;
 }
 
+.post-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
 .post-list .post-item {
+  display: block;
   border-bottom: 1px solid var(--border);
   padding: 1rem 0;
 }
