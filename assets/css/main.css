@@ -107,6 +107,7 @@ main {
 
 a {
   color: var(--blue);
+  text-decoration: none;
 }
 
 a:hover {
@@ -257,16 +258,23 @@ footer {
 .footer-links {
   display: flex;
   gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-links a {
-  color: var(--muted);
+.footer-links a.icon-link {
+  color: var(--gold);
 }
 
-.footer-links a:hover {
-  color: var(--blue-bright);
+.footer-links a.icon-link:hover {
+  color: var(--gold-bright);
+}
+
+.footer-links a.icon-link .icon {
+  display: block;
 }
 
 .footer-note {
   margin: 0.75rem 0 0;
+  text-align: center;
 }
