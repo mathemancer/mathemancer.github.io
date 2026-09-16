@@ -116,6 +116,10 @@ main li {
   hyphens: auto;
 }
 
+html .katex {
+  font-size: 1.05em;
+}
+
 a:hover {
   color: var(--blue-bright);
 }
