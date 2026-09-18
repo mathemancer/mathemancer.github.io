@@ -65,3 +65,12 @@ Then re-add the nav entry in `hugo.yaml`:
       url: "/resume/brent_resume.pdf"
       weight: 20
 ```
+
+## License
+
+- Site code (Hugo config, layouts, styles): [MIT](LICENSE)
+- Blog posts and other content in `content/`: &copy; Brent Moran,
+  licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Fonts and third-party assets: notices shipped alongside them —
+  `static/fonts/CHARTER-LICENSE.txt`, `static/fonts/IOSEVKA-OFL.txt`,
+  `static/katex/LICENSE` (code), `static/katex/fonts/LICENSE` (OFL)
