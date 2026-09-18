@@ -73,6 +73,7 @@ body {
   font-family: "Charter", "Charter BT", Georgia, serif;
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   line-height: 1.65;
+  overflow-x: clip;
 }
 
 header nav {
@@ -118,6 +119,10 @@ main li {
 
 html .katex {
   font-size: 1.05em;
+}
+
+.off-the-edge {
+  white-space: nowrap;
 }
 
 a:hover {
