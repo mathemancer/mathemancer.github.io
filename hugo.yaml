@@ -12,6 +12,7 @@ params:
   github: "https://github.com/mathemancer"
   x: "https://x.com/mathemancer"
   typographtech: "https://typographtech.com"
+  cloudflare_analytics_token: "4f3d547ad7e84a36b5ed3372875b2c58"
 
 menus:
   main:
