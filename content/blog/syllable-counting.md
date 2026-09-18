@@ -9,6 +9,7 @@ The other day, my 5yo poked her head into my office and asked "How long would it
 take to count to a million?" I thought for a bit, brushed her off with "a
 month," and closed the door. I tried, but failed, to get back into my work.
 This post records the outcome of that failure.
+<!--more-->
 
 After some more thought, I decided the actual question here is
 
