@@ -3,8 +3,6 @@ title: "A pointless exercise in counting"
 date: 2026-09-18
 ---
 
-[Relevant XKCD](https://xkcd.com/356/)
-
 ## Nerd sniped by a 5-year-old
 
 The other day, my 5yo poked her head into my office and asked "How long would it

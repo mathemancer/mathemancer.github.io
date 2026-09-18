@@ -13,7 +13,7 @@ deployed to GitHub Pages at <https://mathemancer.com> (also reachable as
 - `assets/css/` — styles; palette taken from foot.ini, syntax styles generated via `hugo gen chromastyles`
 - `static/fonts/` — self-hosted Charter + subset Iosevka webfonts (licenses included)
 - `static/katex/` — KaTeX CSS + fonts for build-time math rendering (no client-side JS)
-- `static/resume/` — compiled resume PDF (served); LaTeX sources live in `resume/`
+- `resume/` — LaTeX resume sources; compiled PDF **not currently published** (see issue #1)
 - `static/CNAME` — custom domain (`mathemancer.com`)
 
 ## Adding a post
@@ -49,7 +49,19 @@ Custom domain: `mathemancer.com` and `www`. DNS at the registrar: apex
 
 ## Rebuilding the resume
 
+The compiled PDF is not published right now (see issue #1). To restore it after
+updating the sources:
+
 ```sh
 cd resume && latexmk -pdf brent_resume.tex
+mkdir -p ../static/resume/
 cp brent_resume.pdf ../static/resume/
+```
+
+Then re-add the nav entry in `hugo.yaml`:
+
+```yaml
+    - name: "Resume"
+      url: "/resume/brent_resume.pdf"
+      weight: 20
 ```

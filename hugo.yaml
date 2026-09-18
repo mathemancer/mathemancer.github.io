@@ -18,9 +18,6 @@ menus:
     - name: "Blog"
       pageRef: "/blog/"
       weight: 10
-    - name: "Resume"
-      url: "/resume/brent_resume.pdf"
-      weight: 20
 
 markup:
   goldmark:
