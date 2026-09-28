@@ -7,3 +7,10 @@ resume/brent_resume.log
 public/
 resources/
 .hugo_build.lock
+
+# Local Isso development (see comments/README.md)
+comments/.venv/
+comments/dev.db
+comments/dev.db-journal
+comments/isso.cfg
+comments/isso.env
