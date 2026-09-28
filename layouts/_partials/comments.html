@@ -1,0 +1,37 @@
+{{- /*
+  Comment section (Isso).
+
+  `isso` is the production endpoint; `isso_dev` points at the local container and is
+  swapped in by hugo server, mirroring the hugo.IsServer guard in head-analytics.html
+  (inverted: analytics is off in dev, comments are on). Both blocks live in hugo.yaml.
+
+  The section renders nothing at all if neither block is set, so removing the
+  params from hugo.yaml cleanly disables comments.
+*/ -}}
+{{- $isso := site.Params.isso }}
+{{- if hugo.IsServer }}
+  {{- $isso = site.Params.isso_dev | default site.Params.isso }}
+{{- end }}
+{{- with $isso }}
+<section class="comments" aria-labelledby="comments-heading">
+  <h2 id="comments-heading">Comments</h2>
+  {{- /* Isso replaces the contents of #isso-thread. data-isso-id is the thread key
+         and is also the post permalink: renaming a post orphans its thread, because
+         Isso uses the page URI as the thread id. */}}
+  <section id="isso-thread"
+           data-title="{{ $.Title }}"
+           data-isso-id="{{ $.RelPermalink }}"></section>
+  <noscript>
+    <p>Comments need JavaScript. <a href="mailto:{{ site.Params.email }}">Email me</a> instead.</p>
+  </noscript>
+</section>
+<script src="{{ .embed_js }}"
+        data-isso="{{ .endpoint }}"
+        data-isso-css="false"
+        data-isso-avatar="false"
+        data-isso-vote="false"
+        data-isso-sorting="oldest"
+        data-isso-lang="en"
+        crossorigin="anonymous"
+        async></script>
+{{- end }}

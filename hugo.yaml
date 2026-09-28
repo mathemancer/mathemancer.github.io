@@ -14,6 +14,17 @@ params:
   typographtech: "https://typographtech.com"
   cloudflare_analytics_token: "4f3d547ad7e84a36b5ed3372875b2c58"
 
+  # Comments: Isso, self-hosted. See comments/README.md.
+  # `isso` is production and is what gets deployed. `isso_dev` is only used by
+  # `hugo server` (comments.html swaps them on hugo.IsServer) so the local preview
+  # matches what will ship. No trailing slashes: Isso rejects them on public-endpoint.
+  isso:
+    endpoint: "https://comments.mathemancer.com"
+    embed_js: "https://comments.mathemancer.com/js/embed.min.js"
+  isso_dev:
+    endpoint: "http://localhost:8090"
+    embed_js: "http://localhost:8090/js/embed.min.js"
+
 menus:
   main:
     - name: "Blog"

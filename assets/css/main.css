@@ -301,3 +301,200 @@ footer {
   margin: 0.75rem 0 0;
   text-align: center;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Comments (Isso)                                                            */
+/* -------------------------------------------------------------------------- */
+/* The widget is injected inline into #isso-thread, NOT an iframe, so everything
+   in main.css reaches it. The two things that matter: `main p, main li` is
+   justified with hyphenation, which looks wrong in a narrow comment column and
+   has to be undone; and Isso's own stylesheet is dark-agnostic, so its ~25
+   custom properties are remapped onto the site palette here.
+
+   assets/css/isso.css is upstream Isso (0.14.0), vendored so it goes through Hugo
+   Pipes and stays fingerprinted. Override it here rather than editing it. */
+
+.comments {
+  /* Prevents a white flash of the form controls before the widget paints. */
+  color-scheme: dark;
+
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.comments > h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.125rem;
+}
+
+/* Remap Isso's variables onto the site palette. Scoped to .comments so they cannot
+   leak, though the --isso- prefix already makes collisions unlikely. */
+.comments {
+  --isso-primary-text-color: var(--fg);
+  --isso-secondary-text-color: var(--muted);
+
+  --isso-border: 1px solid var(--border);
+  --isso-box-shadow-color: transparent;
+  --isso-hover-color: var(--gold-bright);
+
+  --isso-link-hover-color: var(--blue-bright);
+  --isso-link-text-shadow-color: transparent;
+
+  --isso-input-background-color: var(--code-bg);
+  --isso-input-outline-color: var(--gold);
+
+  --isso-button-background-color: #2a2a2a;
+  --isso-button-border: 1px solid var(--border);
+  --isso-button-hover-background-color: #333333;
+  --isso-button-active-background-color: #3a3a3a;
+
+  --isso-preview-border-color: var(--border);
+  --isso-preview-box-shadow-color: transparent;
+  --isso-preview-background: var(--code-bg);
+
+  --isso-pre-color: var(--fg);
+  --isso-pre-background-color: var(--code-bg);
+  --isso-pre-border-color: var(--border);
+
+  --isso-comment-divider-color: var(--border);
+  --isso-page-author-suffix-color: var(--gold);
+  --isso-target-fade-background-color: rgba(204, 204, 119, 0.15);
+}
+
+/* The widget sits inside <main>, so it inherits text-align: justify and
+   hyphens: auto from `main p, main li`. Undo both: comments are a narrow column
+   and justified text with hyphenation is not what you want there. */
+.comments p,
+.comments li {
+  text-align: left;
+  hyphens: manual;
+}
+
+.comments {
+  font-size: 0.9375rem;
+}
+
+/* Isso 0.14.0 supports exactly one level of nesting (db/comments.py `_find()`
+   walks to the topmost ancestor), so a single indent level is all there is. */
+.comments .isso-comment .isso-comment {
+  margin-left: 1.5rem;
+  border-left: 1px solid var(--border);
+  padding-left: 1rem;
+}
+
+/* The site author's own comments, via data-isso-page-author-hashes. */
+.comments .isso-is-page-author > .isso-text-wrapper > .isso-comment-header > .isso-author {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.comments .isso-comment-header .isso-author {
+  color: var(--fg);
+}
+
+.comments .isso-text a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.comments .isso-text a:hover {
+  color: var(--blue-bright);
+}
+
+/* Code inside comments, matched to the site's own code treatment. */
+.comments .isso-text pre,
+.comments .isso-text :not(pre) > code {
+  font-family: "Iosevka Web", ui-monospace, monospace;
+  font-size: 0.875em;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+}
+
+.comments .isso-text :not(pre) > code {
+  border: 0;
+  padding: 0.1em 0.3em;
+}
+
+.comments .isso-text pre {
+  padding: 0.75rem;
+  overflow-x: auto;
+}
+
+/* Inputs: site background, gold focus ring to match :focus-visible elsewhere. */
+.comments .isso-input-wrapper input,
+.comments .isso-textarea {
+  background: var(--code-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 0.9375rem;
+}
+
+.comments .isso-textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  line-height: 1.5;
+}
+
+.comments .isso-input-wrapper input:focus,
+.comments .isso-textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 0;
+  border-color: var(--gold);
+}
+
+.comments .isso-input-wrapper label {
+  color: var(--muted);
+}
+
+/* Submit button in gold, matching .site-title. */
+.comments .isso-post-action > input[type="submit"] {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.35rem 1rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.comments .isso-post-action > input[type="submit"]:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.comments .isso-post-action > input[type="submit"]:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+
+/* Reply/edit/delete affordances. */
+.comments .isso-comment-footer a,
+.comments .isso-parent {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.comments .isso-comment-footer a:hover,
+.comments .isso-parent:hover {
+  color: var(--gold);
+}
+
+/* Identity marker (your own comment) and timestamps. */
+.comments .isso-note,
+.comments .isso-comment-header a {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* The no-JS fallback sits inside <main>; keep it left-aligned like the rest of
+   the comments block rather than inheriting justify. */
+.comments noscript p,
+.comments > p {
+  text-align: left;
+  hyphens: manual;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
